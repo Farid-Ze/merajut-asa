@@ -31,16 +31,30 @@
     "security:scan": "node scripts/security-scan.js"
   },
   "devDependencies": {
-    "@turbo/gen": "^1.10.12",
-    "turbo": "^1.10.12",
-    "prettier": "^3.0.2",
-    "husky": "^8.0.3",
-    "lint-staged": "^14.0.1",
+    "@babel/types": "^7.28.1",
     "@commitlint/cli": "^17.7.1",
     "@commitlint/config-conventional": "^17.7.0",
-    "lighthouse": "^10.4.0",
+    "@jridgewell/resolve-uri": "^3.1.2",
+    "@jridgewell/sourcemap-codec": "^1.5.4",
+    "@surma/rollup-plugin-off-main-thread": "^2.2.3",
+    "@turbo/gen": "^1.10.12",
+    "axe-core": "^4.7.2",
+    "builtin-modules": "^5.0.0",
+    "critters": "^0.0.25",
+    "ejs": "^3.1.10",
+    "estree-walker": "^3.0.3",
+    "husky": "^8.0.3",
+    "is-core-module": "^2.16.1",
     "jest-axe": "^8.0.0",
-    "axe-core": "^4.7.2"
+    "leven": "^4.0.0",
+    "lighthouse": "^10.4.0",
+    "lint-staged": "^14.0.1",
+    "magic-string": "^0.30.17",
+    "prettier": "^3.0.2",
+    "resolve": "^1.22.10",
+    "rollup": "^2.79.2",
+    "turbo": "^1.10.12",
+    "typescript": "^5.8.3"
   },
   "lint-staged": {
     "*.{js,ts,tsx}": [
@@ -52,7 +66,9 @@
     ]
   },
   "commitlint": {
-    "extends": ["@commitlint/config-conventional"]
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
   },
   "keywords": [
     "philanthropy",
@@ -62,5 +78,8 @@
     "performance",
     "microservices",
     "gotong-royong"
-  ]
+  ],
+  "dependencies": {
+    "@ducanh2912/next-pwa": "^10.2.9"
+  }
 }

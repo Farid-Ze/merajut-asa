@@ -22,7 +22,8 @@
     "allowJs": true,
     "incremental": true,
     "resolveJsonModule": true,
-    "noEmit": true
+    "noEmit": true,
+    "types": []
   },
   "exclude": [
     "node_modules"

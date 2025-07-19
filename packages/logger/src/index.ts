@@ -119,7 +119,7 @@ export class MerajutLogger {
             winston.format.json(),
             winston.format.printf((info) => {
               // Only log performance-related entries to this file
-              if (info.context?.performance) {
+              if (info.context && typeof info.context === 'object' && 'performance' in info.context) {
                 return JSON.stringify(info);
               }
               return '';
@@ -142,7 +142,7 @@ export class MerajutLogger {
             winston.format.json(),
             winston.format.printf((info) => {
               // Only log security-related entries to this file
-              if (info.context?.security) {
+              if (info.context && typeof info.context === 'object' && 'security' in info.context) {
                 return JSON.stringify(info);
               }
               return '';

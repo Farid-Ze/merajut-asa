@@ -4,6 +4,9 @@
 /node_modules
 /.pnp
 .pnp.js
+**/node_modules/
+.npm/
+.yarn/
 
 # testing
 /coverage
@@ -14,6 +17,7 @@
 
 # production
 /build
+/dist
 
 # misc
 .DS_Store
@@ -26,6 +30,9 @@ yarn-error.log*
 
 # local env files
 .env*.local
+.env.development
+.env.production
+.env.test
 .env
 
 # vercel
@@ -34,3 +41,28 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# TurboRepo
+.turbo/
+
+# PWA files
+**/public/sw.js
+**/public/sw.js.map
+**/public/workbox-*.js
+**/public/workbox-*.js.map
+
+# Editor directories
+.vscode/
+.idea/
+
+# Logs
+logs/
+*.log
+
+.temp
+.tmp
+
+**/dokumen-resmi-project
+
+apps/web/node_modules
+/workspaces/merajut-asa/packages/eslint-config/node_modules
