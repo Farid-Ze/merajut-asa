@@ -1,0 +1,75 @@
+{
+  "name": "merajut-asa",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Platform filantropi digital berbasis komunitas dengan prinsip Gotong Royong Digital",
+  "author": "Farid-Ze",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  },
+  "workspaces": [
+    "apps/*",
+    "apps/services/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "turbo run dev",
+    "build": "turbo run build",
+    "test": "turbo run test",
+    "lint": "turbo run lint",
+    "lint:fix": "turbo run lint:fix",
+    "type-check": "turbo run type-check",
+    "clean": "turbo run clean",
+    "format": "prettier --write \"**/*.{js,ts,tsx,json,md}\"",
+    "format:check": "prettier --check \"**/*.{js,ts,tsx,json,md}\"",
+    "//prepare": "husky install - DISABLED for Vercel deployment, enable when team scales",
+    "performance:budget": "npm run build && node scripts/performance-budget.js",
+    "accessibility:audit": "npm run build && node scripts/accessibility-audit.js",
+    "security:audit": "npm audit && npm run security:scan",
+    "security:scan": "echo 'Security scan placeholder - implement with actual tools'",
+    "dep:check": "npm-check-updates",
+    "dep:update": "npm-check-updates -u && npm install",
+    "setup:hooks": "npm install husky --save-dev && npm set-script prepare 'husky install' && npm run prepare"
+  },
+  "devDependencies": {
+    "@turbo/gen": "^1.9.7",
+    "turbo": "latest",
+    "prettier": "^3.0.0",
+    "typescript": "^5.0.0",
+    "npm-check-updates": "^16.14.6"
+  },
+  "// Future husky config": {
+    "husky": {
+      "hooks": {
+        "pre-commit": "lint-staged && npm run type-check",
+        "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+        "pre-push": "npm run test && npm run build"
+      }
+    },
+    "lint-staged": {
+      "*.{js,ts,tsx}": [
+        "eslint --fix",
+        "prettier --write"
+      ],
+      "*.{json,md}": [
+        "prettier --write"
+      ]
+    }
+  },
+  "keywords": [
+    "philanthropy",
+    "community",
+    "digital-transformation",
+    "social-impact",
+    "gotong-royong",
+    "nextjs",
+    "typescript",
+    "monorepo"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Farid-Ze/merajut-asa.git"
+  }
+}
