@@ -1,0 +1,21 @@
+{
+  "name": "@merajut-asa/types",
+  "version": "0.0.0",
+  "private": true,
+  "license": "MIT",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "clean": "rm -rf dist",
+    "type-check": "tsc --noEmit",
+    "dev": "tsc --watch"
+  },
+  "devDependencies": {
+    "@merajut-asa/tsconfig": "file:../tsconfig",
+    "typescript": "^5.2.2"
+  }
+}

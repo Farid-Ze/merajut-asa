@@ -1,0 +1,29 @@
+{
+  "name": "@merajut-asa/logger",
+  "version": "0.0.0",
+  "private": true,
+  "license": "MIT",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "clean": "rm -rf dist",
+    "type-check": "tsc --noEmit",
+    "dev": "tsc --watch",
+    "test": "jest"
+  },
+  "dependencies": {
+    "winston": "^3.10.0",
+    "winston-daily-rotate-file": "^4.7.1"
+  },
+  "devDependencies": {
+    "@merajut-asa/tsconfig": "file:../tsconfig",
+    "@types/node": "^20.5.6",
+    "typescript": "^5.2.2",
+    "jest": "^29.6.3",
+    "@types/jest": "^29.5.4"
+  }
+}
