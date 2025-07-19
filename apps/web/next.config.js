@@ -203,7 +203,18 @@ const nextConfig = {
       ];
     }
     return [];
-  }
+  },
+
+  // Fix SSR issues with Chakra UI and styled-jsx
+  experimental: {
+    esmExternals: false
+  },
+  
+  // Disable static generation for error pages to avoid context issues
+  generateStaticParams: false,
+  
+  // Skip static optimization for pages with context issues
+  unstable_includeFiles: ['**/*.{js,jsx,ts,tsx}']
 };
 
 module.exports = withPWA(nextConfig);
