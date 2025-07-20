@@ -1,5 +1,6 @@
 import { UIProvider } from '@merajut-asa/ui';
 import { Inter } from 'next/font/google';
+import React from 'react';
 import './global.css';
 
 const inter = Inter({ subsets: ['latin'] });
