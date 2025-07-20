@@ -1,14 +1,19 @@
+'use client';
+
 import {
   Box,
-  Button,
-  Card,
-  CardContent,
   Container,
-  Heading,
   HStack,
   SimpleGrid,
   Text,
   VStack
+} from '@chakra-ui/react';
+
+import {
+  Button,
+  Card,
+  CardContent,
+  Heading
 } from '@merajut-asa/ui';
 import Link from 'next/link';
 

@@ -62,7 +62,14 @@ logs/
 .temp
 .tmp
 
+# Temporary exclusion for project documentation
 **/dokumen-resmi-project
 
-apps/web/node_modules
-/workspaces/merajut-asa/packages/eslint-config/node_modules
+# Build artifacts - use relative paths
+**/dist/
+**/build/
+**/.next/
+**/out/
+
+# Package dependencies
+**/node_modules/

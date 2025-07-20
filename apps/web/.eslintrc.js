@@ -4,16 +4,20 @@ module.exports = {
     project: './tsconfig.json',
   },
   rules: {
+    // Next.js specific optimizations
+    'react/react-in-jsx-scope': 'off',
+    'react/prop-types': 'off',
+
     // Additional Next.js specific rules for performance
     '@next/next/no-img-element': 'error',
     '@next/next/no-page-custom-font': 'error',
     '@next/next/no-sync-scripts': 'error',
     '@next/next/no-css-tags': 'error',
-    
+
     // Performance optimization rules
     'react/jsx-no-bind': ['error', { allowArrowFunctions: false }],
     'react/no-array-index-key': 'error',
-    
+
     // Accessibility enforcement for >95% WCAG compliance
     'jsx-a11y/alt-text': 'error',
     'jsx-a11y/aria-props': 'error',

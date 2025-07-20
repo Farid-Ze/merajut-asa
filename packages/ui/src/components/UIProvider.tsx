@@ -1,48 +1,35 @@
-import { ChakraProvider, CSSReset } from '@chakra-ui/react';
 import React from 'react';
-import { theme } from '../theme';
 
+/**
+ * @deprecated Use ChakraAppProvider from the web app instead.
+ * This component is kept for backward compatibility but will no longer wrap with ChakraProvider.
+ */
 export interface UIProviderProps {
     children: React.ReactNode;
     /**
      * Custom theme override (will be merged with default accessible theme)
+     * @deprecated Theme customization should be done in the ChakraAppProvider
      */
     customTheme?: Record<string, any>;
 }
 
 /**
- * UI Provider that wraps the application with Chakra UI and accessibility-focused theme
+ * UI Provider that passes through children.
  * 
- * Features:
- * - Pre-configured WCAG 2.1 AA compliant theme
- * - High contrast colors and focus indicators
- * - Minimum touch targets (44px)
- * - Semantic color tokens
- * - CSS reset for consistent cross-browser rendering
+ * @deprecated For Next.js applications, use the ChakraAppProvider in apps/web/src/providers/ChakraProvider.tsx instead
  * 
- * @example
- * ```tsx
- * // In your app root (layout.tsx or _app.tsx)
- * <UIProvider>
- *   <App />
- * </UIProvider>
- * ```
+ * This component is kept for backward compatibility but is now a simple passthrough.
+ * The ChakraUI provider has been moved to the web app to avoid module resolution issues.
  */
 export const UIProvider: React.FC<UIProviderProps> = ({
-    children,
-    customTheme
+    children
 }) => {
-    // Merge custom theme with our accessible base theme
-    const finalTheme = customTheme
-        ? { ...theme, ...customTheme }
-        : theme;
-
-    return (
-        <ChakraProvider theme={finalTheme}>
-            <CSSReset />
-            {children}
-        </ChakraProvider>
+    console.warn(
+        '[Deprecated] UIProvider from @merajut-asa/ui is now a passthrough component. ' +
+        'Use ChakraAppProvider from apps/web/src/providers/ChakraProvider.tsx instead.'
     );
+
+    return <>{children}</>;
 };
 
 export default UIProvider;

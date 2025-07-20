@@ -16,12 +16,7 @@
         "lint": "eslint src --ext .ts,.tsx",
         "lint:fix": "eslint src --ext .ts,.tsx --fix"
     },
-    "dependencies": {
-        "@chakra-ui/react": "^2.8.1",
-        "@emotion/react": "^11.11.1",
-        "@emotion/styled": "^11.11.0",
-        "framer-motion": "^10.16.4"
-    },
+    "dependencies": {},
     "devDependencies": {
         "@merajut-asa/eslint-config": "file:../eslint-config",
         "@merajut-asa/tsconfig": "file:../tsconfig",

@@ -1,4 +1,5 @@
-import { extendTheme, type ThemeConfig } from '@chakra-ui/react';
+// Export theme configuration object that can be used with Chakra UI's extendTheme
+// The extendTheme function is now called in the web app to avoid dependency issues
 
 // Design tokens following WCAG 2.1 AA standards
 const colors = {
@@ -343,14 +344,14 @@ const components = {
 };
 
 // Global theme configuration
-const config: ThemeConfig = {
+const config = {
     initialColorMode: 'light',
     useSystemColorMode: false,
     disableTransitionOnChange: false,
 };
 
 // Accessibility-focused theme
-export const theme = extendTheme({
+export const theme = {
     config,
     colors,
     fonts,
@@ -394,6 +395,6 @@ export const theme = extendTheme({
             'border-brand': 'brand.500',
         },
     },
-});
+};
 
 export default theme;

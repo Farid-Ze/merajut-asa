@@ -8,17 +8,44 @@ export default function Error({
   reset: () => void;
 }) {
   return (
-    <div className="min-h-screen flex items-center justify-center">
-      <div className="text-center max-w-md mx-auto px-4">
-        <h2 className="text-2xl font-bold text-gray-800 mb-4">
+    <div style={{
+      minHeight: '100vh',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      fontFamily: 'system-ui, sans-serif'
+    }}>
+      <div style={{
+        textAlign: 'center',
+        maxWidth: '28rem',
+        margin: '0 auto',
+        padding: '0 1rem'
+      }}>
+        <h2 style={{
+          fontSize: '1.5rem',
+          fontWeight: 'bold',
+          color: '#1f2937',
+          marginBottom: '1rem'
+        }}>
           Oops! Terjadi kesalahan
         </h2>
-        <p className="text-gray-600 mb-6">
+        <p style={{
+          color: '#4b5563',
+          marginBottom: '1.5rem'
+        }}>
           Mohon maaf, terjadi kesalahan yang tidak terduga. Tim kami telah diberitahu.
         </p>
         <button
           onClick={reset}
-          className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+          style={{
+            backgroundColor: '#2563eb',
+            color: 'white',
+            padding: '0.75rem 1.5rem',
+            borderRadius: '0.5rem',
+            fontWeight: '600',
+            border: 'none',
+            cursor: 'pointer'
+          }}
         >
           Coba Lagi
         </button>

@@ -1,7 +1,7 @@
-import { UIProvider } from '@merajut-asa/ui';
 import { Inter } from 'next/font/google';
 import React from 'react';
 import './global.css';
+import Providers from './providers';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -20,11 +20,12 @@ export const metadata = {
     index: true,
     follow: true,
   },
-  viewport: {
-    width: 'device-width',
-    initialScale: 1,
-    maximumScale: 1,
-  },
+};
+
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
 };
 
 export default function RootLayout({
@@ -35,9 +36,9 @@ export default function RootLayout({
   return (
     <html lang="id">
       <body className={inter.className} suppressHydrationWarning={true}>
-        <UIProvider>
+        <Providers>
           {children}
-        </UIProvider>
+        </Providers>
       </body>
     </html>
   );
