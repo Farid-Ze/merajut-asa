@@ -48,7 +48,9 @@ const nextConfig = {
     optimizePackageImports: ['@chakra-ui/react', 'framer-motion'],
     turbotrace: {
       logLevel: 'error'
-    }
+    },
+    // Fix SSR issues with Chakra UI and styled-jsx
+    esmExternals: false
   },
 
   // Image optimization for performance
@@ -173,7 +175,7 @@ const nextConfig = {
   i18n: {
     locales: ['id', 'en'],
     defaultLocale: 'id',
-    localeDetection: true,
+    localeDetection: false,
   },
 
   // Redirects for SEO and UX
@@ -203,11 +205,6 @@ const nextConfig = {
       ];
     }
     return [];
-  },
-
-  // Fix SSR issues with Chakra UI and styled-jsx
-  experimental: {
-    esmExternals: false
   }
 };
 

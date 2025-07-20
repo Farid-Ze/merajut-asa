@@ -1,5 +1,5 @@
 module.exports = {
-  extends: ['@merajut-asa/eslint-config/react', 'next/core-web-vitals'],
+  extends: ['@merajut-asa/eslint-config', 'next/core-web-vitals'],
   parserOptions: {
     project: './tsconfig.json',
   },

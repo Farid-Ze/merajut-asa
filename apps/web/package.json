@@ -18,16 +18,17 @@
   "dependencies": {
     "@apollo/client": "^3.8.1",
     "@chakra-ui/react": "^2.8.1",
+    "@ducanh2912/next-pwa": "^10.2.7",
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
     "@merajut-asa/logger": "file:../../packages/logger",
     "@merajut-asa/types": "file:../../packages/types",
+    "@merajut-asa/ui": "file:../../packages/ui",
     "@merajut-asa/utils": "file:../../packages/utils",
-    "@ducanh2912/next-pwa": "^10.2.7",
     "framer-motion": "^10.16.4",
     "graphql": "^16.8.1",
     "i18next": "^23.5.1",
-    "next": "13.5.4",
+    "next": "^14.2.18",
     "next-i18next": "^14.0.3",
     "react": "18.2.0",
     "react-dom": "18.2.0",
@@ -44,12 +45,12 @@
     "@types/react": "18.2.22",
     "@types/react-dom": "18.2.7",
     "eslint": "8.49.0",
-    "eslint-config-next": "13.5.4",
+    "eslint-config-next": "^15.4.2",
     "jest": "^29.7.0",
     "jest-axe": "^8.0.0",
     "jest-environment-jsdom": "^29.7.0",
     "lighthouse": "^10.4.0",
-    "puppeteer": "^21.3.6",
-    "typescript": "5.2.2"
+    "puppeteer": "^24.14.0",
+    "typescript": "^5.8.3"
   }
 }
