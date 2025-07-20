@@ -1,12 +1,19 @@
 'use client';
 
+import { useEffect } from 'react';
+
 export default function Error({
-  error: _error,
+  error,
   reset,
 }: {
   error: Error & { digest?: string };
   reset: () => void;
 }) {
+  useEffect(() => {
+    // Log the error to an error reporting service
+    console.error('Error boundary caught:', error);
+  }, [error]);
+
   return (
     <div style={{
       minHeight: '100vh',

@@ -1,6 +1,6 @@
 import { Inter } from 'next/font/google';
 import React from 'react';
-import './global.css';
+// import './global.css';  // Temporarily commented out to test
 import Providers from './providers';
 
 const inter = Inter({ subsets: ['latin'] });

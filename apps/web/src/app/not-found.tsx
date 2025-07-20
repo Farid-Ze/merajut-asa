@@ -1,6 +1,7 @@
-'use client';
-
 import Link from 'next/link';
+
+// Disable static generation for this page
+export const dynamic = 'force-dynamic';
 
 export default function NotFound() {
   return (
@@ -20,10 +21,12 @@ export default function NotFound() {
         <h1 style={{
           fontSize: '1.5rem',
           fontWeight: 'bold',
-          marginBottom: '1rem'
+          marginBottom: '1rem',
+          color: '#111827'
         }}>404 - Halaman Tidak Ditemukan</h1>
         <p style={{
-          marginBottom: '1.5rem'
+          marginBottom: '1.5rem',
+          color: '#6b7280'
         }}>Maaf, halaman yang Anda cari tidak ada.</p>
         <Link
           href="/"

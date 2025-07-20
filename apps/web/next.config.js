@@ -71,8 +71,8 @@ const nextConfig = {
     ];
   },
   
-  // Performance optimizations
-  optimizePackageImports: ['@chakra-ui/react', 'framer-motion'],
+  // Continue build even with static generation errors for error pages
+  staticPageGenerationTimeout: 60,
   
   // Image optimization
   images: {
