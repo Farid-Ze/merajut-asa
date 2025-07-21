@@ -99,9 +99,11 @@ const nextConfig = {
   // Experimental features for performance
   experimental: {
     optimizePackageImports: ['@chakra-ui/react', 'framer-motion'],
-    skipTrailingSlashRedirect: true,
     missingSuspenseWithCSRBailout: false,
-  }
+  },
+  
+  // Move skipTrailingSlashRedirect out of experimental
+  skipTrailingSlashRedirect: true,
 };
 
 module.exports = nextConfig;
