@@ -1,4 +1,15 @@
 /** @type {import('next').NextConfig} */
+const withPWA = require('@ducanh2912/next-pwa').default({
+  dest: 'public',
+  disable: process.env.NODE_ENV === 'development',
+  register: true,
+  skipWaiting: true,
+  // Fix PWA build issues
+  runtimeCaching: [],
+  fallbacks: {
+    document: '/offline'
+  }
+});
 
 // Security headers configuration as per project documentation
 const securityHeaders = [
@@ -54,16 +65,6 @@ const securityHeaders = [
 const nextConfig = {
   transpilePackages: ['@merajut-asa/ui'],
 
-  // Security headers - Essential for government platform
-  async headers() {
-    return [
-      {
-        source: '/(.*)',
-        headers: securityHeaders,
-      },
-    ];
-  },
-
   // Build optimizations for production
   swcMinify: true,
   poweredByHeader: false,
@@ -74,34 +75,25 @@ const nextConfig = {
     emotion: true, // Enable emotion for Chakra UI
   },
 
-  // Standalone deployment for better Vercel compatibility
-  output: 'standalone',
-
-  // Skip problematic pages during build
-  async generateBuildId() {
-    return 'merajut-asa-build';
-  },
-
-  // Image optimization
+  // Static export configuration for better Vercel deployment
+  output: 'export',
+  trailingSlash: true,
   images: {
-    domains: [],
-    formats: ['image/webp', 'image/avif'],
+    unoptimized: true,
   },
 
-  // Development configuration - allow build to continue with errors
+  // Development configuration - temporarily disable for deployment
   eslint: {
-    ignoreDuringBuilds: true
+    ignoreDuringBuilds: true 
   },
   typescript: {
-    ignoreBuildErrors: true
+    ignoreBuildErrors: true 
   },
 
   // Experimental features for performance
   experimental: {
     optimizePackageImports: ['@chakra-ui/react', 'framer-motion'],
-    skipTrailingSlashRedirect: true,
-    missingSuspenseWithCSRBailout: false,
   }
 };
 
-module.exports = nextConfig;
+module.exports = withPWA(nextConfig);
