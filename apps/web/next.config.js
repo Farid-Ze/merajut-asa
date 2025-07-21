@@ -59,30 +59,21 @@ const securityHeaders = [
 
 const nextConfig = {
   transpilePackages: ['@merajut-asa/ui'],
-  output: 'standalone',
-
-  // Security headers
-  async headers() {
-    return [
-      {
-        source: '/(.*)',
-        headers: securityHeaders,
-      },
-    ];
+  
+  // Build optimizations for production
+  swcMinify: true,
+  poweredByHeader: false,
+  
+  // Disable styled-jsx completely
+  compiler: {
+    styledJsx: false
   },
-
-  // Handle styled-jsx context issue during static generation
-  staticPageGenerationTimeout: 60,
 
   // Image optimization
   images: {
     domains: [],
     formats: ['image/webp', 'image/avif'],
   },
-
-  // Build optimizations for production
-  swcMinify: true,
-  poweredByHeader: false,
 
   // Development configuration
   eslint: {
