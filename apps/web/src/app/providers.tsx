@@ -14,7 +14,7 @@ const chakraTheme = extendTheme({
 
 export default function Providers({ children }: { children: React.ReactNode }) {
   return (
-    <ChakraProvider theme={chakraTheme} resetCSS>
+    <ChakraProvider theme={chakraTheme} resetCSS={false} disableGlobalStyle>
       {children}
     </ChakraProvider>
   )

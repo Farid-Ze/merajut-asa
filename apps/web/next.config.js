@@ -72,6 +72,13 @@ const nextConfig = {
   compiler: {
     styledJsx: false,
     emotion: true, // Enable emotion for Chakra UI
+    removeConsole: process.env.NODE_ENV === 'production',
+  },
+
+  // Disable error overlay for build 
+  onDemandEntries: {
+    maxInactiveAge: 25 * 1000,
+    pagesBufferLength: 2,
   },
 
   // Standalone deployment for better Vercel compatibility
