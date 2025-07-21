@@ -1,18 +1,9 @@
 'use client';
 
-import { useEffect } from 'react';
-
-export default function Error({
-  error,
-  reset,
-}: {
-  error: Error & { digest?: string };
-  reset: () => void;
-}) {
-  useEffect(() => {
-    // Log the error to an error reporting service
-    console.error('Error boundary caught:', error);
-  }, [error]);
+export default function Offline() {
+  const handleRetry = () => {
+    window.location.reload();
+  };
 
   return (
     <div style={{
@@ -20,7 +11,8 @@ export default function Error({
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
-      fontFamily: 'system-ui, sans-serif'
+      fontFamily: 'system-ui, sans-serif',
+      backgroundColor: '#f9fafb'
     }}>
       <div style={{
         textAlign: 'center',
@@ -28,22 +20,18 @@ export default function Error({
         margin: '0 auto',
         padding: '0 1rem'
       }}>
-        <h2 style={{
+        <h1 style={{
           fontSize: '1.5rem',
           fontWeight: 'bold',
-          color: '#1f2937',
-          marginBottom: '1rem'
-        }}>
-          Oops! Terjadi kesalahan
-        </h2>
+          marginBottom: '1rem',
+          color: '#111827'
+        }}>Anda sedang offline</h1>
         <p style={{
-          color: '#4b5563',
-          marginBottom: '1.5rem'
-        }}>
-          Mohon maaf, terjadi kesalahan yang tidak terduga. Tim kami telah diberitahu.
-        </p>
+          marginBottom: '1.5rem',
+          color: '#6b7280'
+        }}>Aplikasi tidak dapat terhubung ke internet. Silakan periksa koneksi Anda.</p>
         <button
-          onClick={reset}
+          onClick={handleRetry}
           style={{
             backgroundColor: '#2563eb',
             color: 'white',
