@@ -5,12 +5,5 @@
   "outputDirectory": "apps/web/.next",
   "installCommand": "npm install",
   "framework": "nextjs",
-  "regions": [
-    "sin1"
-  ],
-  "functions": {
-    "apps/web/src/app/**": {
-      "maxDuration": 30
-    }
-  }
+  "regions": ["sin1"]
 }
